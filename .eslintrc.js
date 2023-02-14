@@ -3,7 +3,12 @@ module.exports = {
         browser: true,
         es2021: true
     },
-    extends: ['plugin:react/recommended', 'airbnb', 'prettier'],
+    extends: [
+        'plugin:react/recommended',
+        'plugin:i18next/recommended',
+        'airbnb',
+        'prettier'
+    ],
     parser: '@typescript-eslint/parser',
     overrides: [],
     parserOptions: {
@@ -17,7 +22,8 @@ module.exports = {
         'react',
         '@typescript-eslint',
         'prettier',
-        'eslint-plugin-prettier'
+        'eslint-plugin-prettier',
+        'i18next'
     ],
     rules: {
         'prettier/prettier': 'warn',
@@ -38,7 +44,8 @@ module.exports = {
         'react/jsx-props-no-spreading': 'warn',
         'no-underscore-dangle': 'off',
         'react/function-component-definition': 'off',
-        'no-shadow': 'off'
+        'no-shadow': 'off',
+        'i18next/no-literal-string': ['error', { markupOnly: true }]
     },
     globals: {
         __IS_DEV__: true
