@@ -1,13 +1,12 @@
-@import './variables/globals';
-@import './reset';
-@import './themes/dark';
-@import './themes/light';
+@import "./variables/globals";
+@import "./reset";
+@import "./themes/dark";
+@import "./themes/light";
 
 .app {
     font-family: var(--font-family-primary);
-    font-size: var(--font-size-M);
-    line-height: var(--font-line-height-M);
-
+    font-size: var(--font-size-m);
+    line-height: var(--font-line-height-m);
     min-height: 100vh;
     background-color: var(--background-color);
     color: var(--primary-color);
