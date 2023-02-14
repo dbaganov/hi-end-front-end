@@ -1,29 +1,30 @@
-import React, {Suspense} from 'react';
-import {Link, Route, Routes} from "react-router-dom";
-import {useTheme} from "app/providers/ThemeProvider";
-import {AboutPage} from "pages/AboutPage";
-import {MainPage} from "pages/MainPage";
-import {classNames} from "shared/lib/classNames";
+import { useTheme } from 'app/providers/ThemeProvider';
+import { classNames } from 'shared/lib/classNames';
+import Layout from 'widgets/Layout/ui/Layout';
+import { AppRouter } from 'app/providers/RouteProvider';
+import { Sidebar } from 'widgets/Sidebar';
+import { Header } from 'widgets/Header';
+import { Navbar } from 'widgets/Navbar';
+import { Content } from 'widgets/Content';
+import { useTranslation } from 'react-i18next';
 
-const App = () => {
-    const {theme, toggleTheme} = useTheme();
+function App() {
+    const { t } = useTranslation();
+    const { theme } = useTheme();
+    const classes = classNames('app', {}, [theme]);
 
     return (
-        <div className={classNames('app', {}, [theme])}>
-            <div className="links">
-                <button onClick={toggleTheme}>Toggle Theme</button>
-                <Link to="/">Main</Link>
-                <Link to="about">About</Link>
-            </div>
-            <Suspense fallback={<div>Loading...</div>}>
-                <Routes>
-                    <Route path="/" element={<MainPage/>}/>
-                    <Route path="about" element={<AboutPage/>}/>
-                    <Route path="*" element={<h1>404</h1>}/>
-                </Routes>
-            </Suspense>
-        </div>
+        <Layout className={classes}>
+            <Header>
+                <h1>{t('title')}</h1>
+                <Navbar />
+            </Header>
+            <Sidebar />
+            <Content>
+                <AppRouter />
+            </Content>
+        </Layout>
     );
-};
+}
 
 export default App;

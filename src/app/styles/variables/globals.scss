@@ -1,18 +1,27 @@
 :root {
-  --font-family-primary: 'Consolas', monospace;
+    --font-family-primary: 'Consolas', monospace;
 
-  --font-size-L: 1.5rem;
-  --font-size-M: 1.2rem;
-  --font-size-S: 1rem;
-  --font-size-XS: 0.8rem;
+    --font-size-L: 1.5rem;
+    --font-size-M: 1.2rem;
+    --font-size-S: 1rem;
+    --font-size-XS: 0.8rem;
 
-  --font-line-height-L: 1.5;
-  --font-line-height-M: 1.2;
-  --font-line-height-S: 1;
-  --font-line-height-XS: 0.8;
+    --font-line-height-L: 1.5;
+    --font-line-height-M: 1.2;
+    --font-line-height-S: 1;
+    --font-line-height-XS: 0.8;
 
-  --font-L: var(--font-size-L) var(--font-line-height-L) var(--font-family-primary);
-  --font-M: var(--font-size-M) var(--font-line-height-M) var(--font-family-primary);
-  --font-S: var(--font-size-S) var(--font-line-height-S) var(--font-family-primary);
-  --font-XS: var(--font-size-XS) var(--font-line-height-XS) var(--font-family-primary);
+    --font-L: var(--font-size-L) var(--font-line-height-L)
+        var(--font-family-primary);
+    --font-M: var(--font-size-M) var(--font-line-height-M)
+        var(--font-family-primary);
+    --font-S: var(--font-size-S) var(--font-line-height-S)
+        var(--font-family-primary);
+    --font-XS: var(--font-size-XS) var(--font-line-height-XS)
+        var(--font-family-primary);
+
+    --content-padding: 1rem;
+
+    --sidebar-width: 20rem;
+    --sidebar-width-collapsed: 0;
 }

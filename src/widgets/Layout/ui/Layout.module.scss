@@ -1,0 +1,12 @@
+.main {
+    display: grid;
+    gap: var(--content-padding);
+    grid-template-rows: auto 1fr;
+    grid-template-columns: var(--sidebar-width) 3fr;
+    grid-template-areas:
+        'header  header'
+        'sidebar content';
+    min-height: 100vh;
+    width: 100vw;
+    padding: var(--content-padding);
+}
