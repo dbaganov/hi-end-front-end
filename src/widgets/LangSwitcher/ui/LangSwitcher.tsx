@@ -1,8 +1,8 @@
 import React from 'react';
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'widgets/Button';
 import { ThemeButton } from 'widgets/Button/ui/Button';
-import i18n from 'shared/config/i18n';
+import i18n from 'shared/config/i18n/i18n';
 import styles from './LangSwitcher.module.scss';
 
 export enum Lang {

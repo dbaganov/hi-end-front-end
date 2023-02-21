@@ -46,7 +46,24 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true }]
+        'i18next/no-literal-string': [
+            'error',
+            {
+                markupOnly: true,
+                ignoreAttribute: ['to', 'data-testid']
+            }
+        ],
+        'max-len': [
+            'error',
+            {
+                ignoreComments: true,
+                code: 120
+            }
+        ],
+        'import/no-extraneous-dependencies': [
+            'error',
+            { devDependencies: true }
+        ]
     },
     globals: {
         __IS_DEV__: true

@@ -2,7 +2,7 @@ import React from 'react';
 import { Theme, useTheme } from 'app/providers/ThemeProvider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'widgets/Button';
 import { ThemeButton } from 'widgets/Button/ui/Button';
 import styles from './ThemeSwitcher.module.scss';
