@@ -11,7 +11,14 @@ module.exports = {
         'prettier'
     ],
     parser: '@typescript-eslint/parser',
-    overrides: [],
+    overrides: [
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off'
+            }
+        }
+    ],
     parserOptions: {
         ecmaFeatures: {
             jsx: true
