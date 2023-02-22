@@ -8,7 +8,8 @@ module.exports = {
         'plugin:react/recommended',
         'plugin:i18next/recommended',
         'airbnb',
-        'prettier'
+        'prettier',
+        'plugin:storybook/recommended'
     ],
     parser: '@typescript-eslint/parser',
     overrides: [
@@ -57,7 +58,12 @@ module.exports = {
             'error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['to', 'data-testid']
+                ignoreAttribute: [
+                    'to',
+                    'data-testid',
+                    'ariaLabel',
+                    'wrapperClass'
+                ]
             }
         ],
         'max-len': [

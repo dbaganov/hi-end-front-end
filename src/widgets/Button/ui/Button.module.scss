@@ -1,7 +1,41 @@
+.button {
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: var(--font-size-m);
+    line-height: var(--font-line-height-m);
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition-duration: 0.2s;
+    transition-property: background-color, color, border-color;
+    transition-timing-function: ease-in-out;
+    border: none;
+    outline: none;
+}
+
+.button:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
 .clear {
     margin: 0;
     padding: 0;
     border: 0;
     background: none;
     outline: none;
+}
+
+.primary {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.outline {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.outline:hover {
+    border-color: var(--secondary-color);
 }
