@@ -7,7 +7,7 @@ import { AppRouter } from 'app/providers/RouteProvider';
 import Layout from './Layout';
 
 export default {
-    title: 'Layout',
+    title: 'widgets/Layout',
     component: Layout,
     argTypes: {
         backgroundColor: { control: 'color' }

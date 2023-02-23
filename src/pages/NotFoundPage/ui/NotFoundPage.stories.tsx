@@ -1,17 +1,16 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import Loader from './Loader';
+import NotFoundPage from './NotFoundPage';
 
 export default {
-    title: 'shared/Loader',
-    component: Loader,
+    title: 'pages/NotFoundPage',
+    component: NotFoundPage,
     argTypes: {
         backgroundColor: { control: 'color' }
     }
-} as ComponentMeta<typeof Loader>;
+} as ComponentMeta<typeof NotFoundPage>;
 
-const Template: ComponentStory<typeof Loader> = () => <Loader />;
+const Template: ComponentStory<typeof NotFoundPage> = args => <NotFoundPage />;
 
 export const Default = Template.bind({});
 Default.args = {};

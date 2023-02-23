@@ -5,7 +5,7 @@ import { Layout } from 'widgets/Layout';
 import Content from './Content';
 
 export default {
-    title: 'Content',
+    title: 'widgets/Content',
     component: Content,
     argTypes: {
         backgroundColor: { control: 'color' }

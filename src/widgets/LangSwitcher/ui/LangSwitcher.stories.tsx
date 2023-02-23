@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import LangSwitcher from './LangSwitcher';
 
 export default {
-    title: 'LangSwitcher',
+    title: 'widgets/LangSwitcher',
     component: LangSwitcher,
     argTypes: {
         backgroundColor: { control: 'color' }

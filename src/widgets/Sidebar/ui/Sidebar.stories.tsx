@@ -4,7 +4,7 @@ import { Layout } from 'widgets/Layout';
 import Sidebar from './Sidebar';
 
 export default {
-    title: 'Sidebar',
+    title: 'widgets/Sidebar',
     component: Sidebar,
     argTypes: {
         backgroundColor: { control: 'color' }

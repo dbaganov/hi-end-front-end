@@ -1,17 +1,16 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import Loader from './Loader';
+import MainPage from './MainPage';
 
 export default {
-    title: 'shared/Loader',
-    component: Loader,
+    title: 'pages/MainPage',
+    component: MainPage,
     argTypes: {
         backgroundColor: { control: 'color' }
     }
-} as ComponentMeta<typeof Loader>;
+} as ComponentMeta<typeof MainPage>;
 
-const Template: ComponentStory<typeof Loader> = () => <Loader />;
+const Template: ComponentStory<typeof MainPage> = args => <MainPage />;
 
 export const Default = Template.bind({});
 Default.args = {};
