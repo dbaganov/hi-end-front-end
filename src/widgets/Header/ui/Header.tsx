@@ -2,20 +2,23 @@ import React from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
+import { Navbar } from 'widgets/Navbar';
+import { useTranslation } from 'react-i18next';
 import styles from './Header.module.scss';
 
 interface HeaderProps {
     className?: string;
-    children?: React.ReactNode;
 }
 
 function Header(props: HeaderProps) {
-    const { className, children } = props;
+    const { t } = useTranslation();
+    const { className } = props;
     const classes = classNames(styles.header, {}, [className]);
 
     return (
         <header className={classes}>
-            {children}
+            <h1>{t('title')}</h1>
+            <Navbar />
             <ThemeSwitcher />
             <LangSwitcher />
         </header>

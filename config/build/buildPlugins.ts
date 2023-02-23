@@ -1,21 +1,19 @@
 import webpack from "webpack";
-import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import ReactRefreshPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 import {BundleAnalyzerPlugin} from "webpack-bundle-analyzer";
+import buildDefinePlugin from "./plugins/buildDefinePlugin";
+import {BuildOptions} from "./types/config";
+import buildHtmlWebpackPlugin from "./plugins/buildHtmlWebpackPlugin";
 
-export function buildPlugins(templatePath: string, isDev: boolean): webpack.WebpackPluginInstance[] {
+export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstance[] {
     const progressPlugin = new webpack.ProgressPlugin();
-    const htmlWebpackPlugin = new HtmlWebpackPlugin({
-        template: templatePath
-    });
+    const htmlWebpackPlugin = buildHtmlWebpackPlugin(options);
     const miniCssExtractPlugin = new MiniCssExtractPlugin({
         filename: "css/[name].[contenthash].css",
         chunkFilename: "css/[id].[contenthash].css",
     });
-    const definePlugin = new webpack.DefinePlugin({
-        __IS_DEV__: JSON.stringify(isDev)
-    });
+    const definePlugin = buildDefinePlugin(options);
     const hotModuleReplacementPlugin = new ReactRefreshPlugin();
     const bundleAnalyzerPlugin = new BundleAnalyzerPlugin({ openAnalyzer: false });
 

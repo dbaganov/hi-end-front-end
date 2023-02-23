@@ -12,7 +12,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
     const { mode, paths } = options;
     const entry = buildEntry(paths.entry);
     const output = buildOutput(paths.output);
-    const plugins = buildPlugins(paths.html, options.isDev);
+    const plugins = buildPlugins(options);
     const resolve = buildResolvers(options);
     const module = buildModules(options);
     const devtool = options.isDev ? 'inline-source-map' : undefined;
