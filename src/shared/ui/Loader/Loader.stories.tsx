@@ -8,6 +8,11 @@ export default {
     component: Loader,
     argTypes: {
         backgroundColor: { control: 'color' }
+    },
+    parameters: {
+        loki: {
+            skip: true
+        }
     }
 } as ComponentMeta<typeof Loader>;
 
