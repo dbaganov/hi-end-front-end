@@ -17,12 +17,17 @@ export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstan
     const hotModuleReplacementPlugin = new ReactRefreshPlugin();
     const bundleAnalyzerPlugin = new BundleAnalyzerPlugin({ openAnalyzer: false });
 
-    return [
+    const plugins = [
         progressPlugin,
         htmlWebpackPlugin,
         miniCssExtractPlugin,
         definePlugin,
-        hotModuleReplacementPlugin,
-        bundleAnalyzerPlugin
     ];
+
+    if (options.isDev) {
+        plugins.push(hotModuleReplacementPlugin);
+        plugins.push(bundleAnalyzerPlugin);
+    }
+
+    return plugins;
 }

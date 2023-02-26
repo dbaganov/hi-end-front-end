@@ -19,6 +19,12 @@ export default ({ config }: { config: webpack.Configuration }) => {
     };
 
     // eslint-disable-next-line no-param-reassign
+    config.module.rules = config.module.rules.filter(
+        // exclude svg from rules to avoid conflicts with our svg loader
+        (rule: webpack.RuleSetRule) => !rule.test?.toString().includes('svg')
+    );
+
+    // eslint-disable-next-line no-param-reassign
     config.resolve.modules.push(paths.src);
     config.resolve.extensions.push('.ts', '.tsx');
     config.module.rules.push(cssLoader(options));

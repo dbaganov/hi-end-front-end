@@ -1,7 +1,9 @@
 {
-    "title": "React App FI",
+    "title": "React App Fi",
     "notFoundPageHeader": "Page not found Fi",
     "Page Error": "Page Error Fi",
     "Reload Page": "Reload Page Fi",
-    "Sidebar": "Sidebar FI"
+    "About Page": "About Page Fi",
+    "Sidebar": "Sidebar Fi",
+    "Main Page": "Main Page Fi",
 }

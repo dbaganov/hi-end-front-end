@@ -27,7 +27,7 @@ function Sidebar(props: SidebarProps) {
         <aside data-testid="sidebar" className={classes}>
             <h2>{t('Sidebar')}</h2>
             <Button data-testid="sidebar-toggle" onClick={onToggle}>
-                toggle
+                {t('Toggle')}
             </Button>
         </aside>
     );
