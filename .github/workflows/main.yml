@@ -14,11 +14,12 @@ jobs:
         node-version: [18.x]
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-          fetch-depth: 0
       - name: Cache node modules
         id: cache-npm
         uses: actions/cache@v2
