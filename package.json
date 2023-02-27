@@ -15,8 +15,7 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui:ci": "chromatic --exit-zero-on-changes",
     "storybook": "start-storybook -p 6006 -c ./config/storybook -s ./public",
-    "storybook:build": "build-storybook -c ./config/storybook -s ./public",
-    "chromatic": "npx chromatic --project-token=45beb4b38268"
+    "storybook:build": "build-storybook -c ./config/storybook -s ./public"
   },
   "keywords": [],
   "author": "",
