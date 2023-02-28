@@ -2,5 +2,6 @@
     grid-area: content;
     padding: var(--content-padding);
     background-color: #fff;
-    box-shadow: 0 0 0.5rem rgb(0 0 0 / 10%);
+    box-shadow: var(--content-box-shadow);
+    border-radius: var(--content-border-radius);
 }

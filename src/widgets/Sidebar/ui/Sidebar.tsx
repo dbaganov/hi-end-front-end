@@ -1,7 +1,12 @@
 import React from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'widgets/Button';
-import { useTranslation } from 'react-i18next';
+import { Navbar } from 'widgets/Navbar';
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { ThemeButton } from 'widgets/Button/ui/Button';
+import { useLayout } from 'app/providers/LayoutProvider';
 import styles from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -10,25 +15,28 @@ interface SidebarProps {
 
 function Sidebar(props: SidebarProps) {
     const { className } = props;
-    const { t } = useTranslation();
-    const [collapsed, setCollapsed] = React.useState(false);
-
-    const classes = classNames(
-        styles.aside,
-        { [styles.collapsed]: collapsed },
-        [className]
-    );
-
-    const onToggle = () => {
-        setCollapsed(prev => !prev);
-    };
+    const { layout, toggleLayout } = useLayout();
+    const classes = classNames(styles.aside, {}, [className]);
 
     return (
         <aside data-testid="sidebar" className={classes}>
-            <h2>{t('Sidebar')}</h2>
-            <Button data-testid="sidebar-toggle" onClick={onToggle}>
-                {t('Toggle')}
-            </Button>
+            <Navbar />
+            <br />
+            <div className={styles['sidebar-footer']}>
+                <ThemeSwitcher />
+                <Button
+                    data-testid="sidebar-toggle"
+                    className={styles['sidebar-toggle']}
+                    theme={ThemeButton.PRIMARY}
+                    onClick={toggleLayout}
+                >
+                    <FontAwesomeIcon
+                        icon={
+                            layout === 'collapsed' ? faAngleRight : faAngleLeft
+                        }
+                    />
+                </Button>
+            </div>
         </aside>
     );
 }

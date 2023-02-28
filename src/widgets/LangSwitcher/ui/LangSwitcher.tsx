@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'widgets/Button';
 import { ThemeButton } from 'widgets/Button/ui/Button';
@@ -16,6 +16,8 @@ enum LangFlag {
 }
 
 function LangSwitcher() {
+    const { language } = i18n;
+    const availableLanguages = Object.keys(Lang);
     const classes = classNames(styles['lang-switcher'], {}, []);
 
     const toggleLang = (lang: Lang) => () => {
@@ -24,12 +26,18 @@ function LangSwitcher() {
 
     return (
         <div className={classes}>
-            <Button theme={ThemeButton.CLEAR} onClick={toggleLang(Lang.EN)}>
-                {LangFlag.EN}
-            </Button>
-            <Button theme={ThemeButton.CLEAR} onClick={toggleLang(Lang.FI)}>
-                {LangFlag.FI}
-            </Button>
+            {availableLanguages.map(lang => (
+                <Button
+                    className={classNames(styles['lang-switcher__button'], {
+                        [styles['lang-switcher__button--active']]:
+                            language === lang.toLowerCase()
+                    })}
+                    theme={ThemeButton.CLEAR}
+                    onClick={toggleLang(Lang[lang as keyof typeof Lang])}
+                >
+                    {LangFlag[lang as keyof typeof LangFlag]}
+                </Button>
+            ))}
         </div>
     );
 }

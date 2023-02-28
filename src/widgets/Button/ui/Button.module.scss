@@ -3,8 +3,8 @@
     color: var(--text-color);
     font-size: var(--font-size-m);
     line-height: var(--font-line-height-m);
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
+    padding: calc(var(--content-padding) / 2) var(--content-padding);
+    border-radius: var(--content-border-radius);
     transition-duration: 0.2s;
     transition-property: background-color, color, border-color;
     transition-timing-function: ease-in-out;

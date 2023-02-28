@@ -1,5 +1,6 @@
 import React from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { useLayout } from 'app/providers/LayoutProvider';
 import styles from './Layout.module.scss';
 
 interface LayoutProps {
@@ -9,7 +10,8 @@ interface LayoutProps {
 
 function Layout(props: LayoutProps) {
     const { className, children } = props;
-    const classes = classNames(styles.main, {}, [className]);
+    const { layout } = useLayout();
+    const classes = classNames(styles.main, {}, [className, styles[layout]]);
 
     return <main className={classes}>{children}</main>;
 }

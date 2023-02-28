@@ -5,6 +5,11 @@ export enum Theme {
     Dark = 'dark'
 }
 
+export enum ThemeIcons {
+    Light = '🌞',
+    Dark = '🌚'
+}
+
 export interface ThemeContextProps {
     theme: Theme;
     setTheme: (theme: Theme) => void;

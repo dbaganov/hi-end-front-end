@@ -6,15 +6,18 @@ import { ThemeProvider } from 'app/providers/ThemeProvider';
 import 'shared/config/i18n/i18n';
 import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 import { PageError } from 'widgets/PageError';
+import { LayoutProvider } from 'app/providers/LayoutProvider';
 import App from './app/App';
 
 render(
     <BrowserRouter>
         <ErrorBoundary fallback={<PageError />}>
             <ThemeProvider>
-                <Suspense fallback="">
-                    <App />
-                </Suspense>
+                <LayoutProvider>
+                    <Suspense fallback="">
+                        <App />
+                    </Suspense>
+                </LayoutProvider>
             </ThemeProvider>
         </ErrorBoundary>
     </BrowserRouter>,

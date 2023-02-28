@@ -1,8 +1,6 @@
 import React from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
-import { Navbar } from 'widgets/Navbar';
 import { useTranslation } from 'react-i18next';
 import styles from './Header.module.scss';
 
@@ -18,8 +16,6 @@ function Header(props: HeaderProps) {
     return (
         <header className={classes}>
             <h1>{t('title')}</h1>
-            <Navbar />
-            <ThemeSwitcher />
             <LangSwitcher />
         </header>
     );

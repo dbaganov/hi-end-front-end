@@ -6,5 +6,6 @@
     padding: var(--content-padding);
     height: 4rem;
     background-color: #fff;
-    box-shadow: 0 0 0.5rem rgb(0 0 0 / 10%);
+    box-shadow: var(--content-box-shadow);
+    border-radius: var(--content-border-radius);
 }
