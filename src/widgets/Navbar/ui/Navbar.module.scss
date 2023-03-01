@@ -1,4 +1,14 @@
 .nav {
     display: flex;
-    gap: var(--content-padding);
+    flex-direction: column;
+    gap: calc(var(--content-padding) / 2);
+}
+
+.nav-link-text {
+    transition: opacity 0.2s ease-in-out;
+}
+
+.nav-link-text--collapsed {
+    opacity: 0;
+    width: 0;
 }

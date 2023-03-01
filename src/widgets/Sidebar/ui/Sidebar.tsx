@@ -16,7 +16,7 @@ interface SidebarProps {
 function Sidebar(props: SidebarProps) {
     const { className } = props;
     const { layout, toggleLayout } = useLayout();
-    const classes = classNames(styles.aside, {}, [className]);
+    const classes = classNames(styles.aside, {}, [className, layout]);
 
     return (
         <aside data-testid="sidebar" className={classes}>

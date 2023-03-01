@@ -15,6 +15,7 @@ function ThemeSwitcher() {
         <div className={classes}>
             {availableThemes.map(theme => (
                 <Button
+                    key={theme}
                     className={classNames(styles['theme-switcher__button'], {
                         [styles['theme-switcher__button--active']]:
                             appTheme === theme.toLowerCase()

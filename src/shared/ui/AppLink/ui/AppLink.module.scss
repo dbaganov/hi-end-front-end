@@ -1,0 +1,21 @@
+.AppLink {
+    display: flex;
+    align-items: center;
+    gap: var(--content-padding);
+    transition: background-color 0.2s ease-in-out;
+    color: var(--color-primary);
+    text-decoration: none;
+    padding: calc(var(--content-padding) / 2) var(--content-padding);
+    border-radius: var(--content-border-radius);
+
+    &:hover {
+        background-color: var(--background-color);
+    }
+}
+
+.AppLink--with-icon {
+    .svg-inline--fa {
+        width: 1.5rem;
+        height: auto;
+    }
+}
