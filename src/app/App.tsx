@@ -1,4 +1,3 @@
-import { useTheme } from 'app/providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
 import Layout from 'widgets/Layout/ui/Layout';
 import { AppRouter } from 'app/providers/RouteProvider';
@@ -7,8 +6,7 @@ import { Header } from 'widgets/Header';
 import { Content } from 'widgets/Content';
 
 function App() {
-    const { theme } = useTheme();
-    const classes = classNames('app', {}, [theme]);
+    const classes = classNames('app', {}, []);
 
     return (
         <Layout className={classes}>

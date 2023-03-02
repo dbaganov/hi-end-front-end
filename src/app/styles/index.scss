@@ -3,11 +3,14 @@
 @import "./themes/dark";
 @import "./themes/light";
 
-.app {
+body {
     font-family: var(--font-family-primary);
     font-size: var(--font-size-m);
     line-height: var(--font-line-height-m);
-    min-height: 100vh;
     background-color: var(--background-color);
     color: var(--primary-color);
+}
+
+.app {
+    min-height: 100vh;
 }

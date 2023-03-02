@@ -32,7 +32,8 @@ module.exports = {
         '@typescript-eslint',
         'prettier',
         'eslint-plugin-prettier',
-        'i18next'
+        'i18next',
+        'react-hooks'
     ],
     rules: {
         'prettier/prettier': 'warn',
@@ -76,7 +77,11 @@ module.exports = {
         'import/no-extraneous-dependencies': [
             'error',
             { devDependencies: true }
-        ]
+        ],
+        'jsx-a11y/no-static-element-interactions': 'off',
+        'jsx-a11y/click-events-have-key-events': 'off',
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error'
     },
     globals: {
         __IS_DEV__: true
