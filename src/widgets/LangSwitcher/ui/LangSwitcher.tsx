@@ -28,6 +28,7 @@ function LangSwitcher() {
         <div className={classes}>
             {availableLanguages.map(lang => (
                 <Button
+                    key={lang}
                     className={classNames(styles['lang-switcher__button'], {
                         [styles['lang-switcher__button--active']]:
                             language === lang.toLowerCase()

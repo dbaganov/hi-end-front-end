@@ -6,6 +6,9 @@
 import path from 'path';
 
 export default {
+    globals: {
+        __IS_DEV__: true
+    },
     rootDir: '../../',
     roots: ['<rootDir>/src'],
     testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
