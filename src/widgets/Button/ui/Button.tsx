@@ -15,7 +15,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 function Button(props: ButtonProps) {
-    const { theme, className, children, ...rest } = props;
+    const { theme = ThemeButton.PRIMARY, className, children, ...rest } = props;
     const classes = classNames(styles.button, {}, [className, styles[theme]]);
 
     return (

@@ -1,12 +1,17 @@
+@use "app/styles/mixins.scss" as *;
+
 .header {
     grid-area: header;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--content-padding);
     height: 4rem;
-    width: 100%;
-    background-color: #fff;
-    box-shadow: var(--content-box-shadow);
-    border-radius: var(--content-border-radius);
+
+    @include card;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: var(--content-padding);
 }

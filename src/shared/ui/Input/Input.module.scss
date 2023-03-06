@@ -1,0 +1,33 @@
+@use "app/styles/mixins.scss" as *;
+
+.Input {
+    display: block;
+    width: 100%;
+
+    @include card;
+}
+
+.Input + .Input {
+    margin-top: var(--content-margin);
+}
+
+.Input__label {
+    display: block;
+    font-weight: bolder;
+    margin-bottom: calc(var(--content-margin) / 2);
+}
+
+.Input__input {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--background-color);
+    border-radius: var(--content-border-radius);
+    padding: calc(var(--content-padding) / 2) var(--content-padding);
+    background-color: var(--background-color-inverted);
+    transition: border-color 0.2s ease-in-out;
+}
+
+.Input__input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}

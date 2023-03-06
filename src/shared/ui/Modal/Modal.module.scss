@@ -1,3 +1,5 @@
+@use "app/styles/mixins.scss" as *;
+
 .modal {
     position: fixed;
     inset: 0;
@@ -9,6 +11,7 @@
     opacity: 0;
     pointer-events: none;
     z-index: -1;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .overlay {
@@ -21,14 +24,12 @@
 }
 
 .content {
-    padding: var(--content-padding);
-    border-radius: var(--content-border-radius);
-    box-shadow: var(--content-box-shadow);
+    @include card;
+
+    width: auto;
     background-color: var(--background-color);
-    color: var(--primary-color);
+    color: var(--primary-color-inverted);
     z-index: calc(var(--modal-z-index) + 2);
-    transform: scale(0.5);
-    transition: transform 0.2s ease-in-out;
     max-width: 50rem;
 }
 
@@ -36,14 +37,8 @@
     opacity: 1;
     pointer-events: auto;
     z-index: var(--modal-z-index);
-
-    .content {
-        transform: scale(1);
-    }
 }
 
 .closing {
-    .content {
-        transform: scale(0.5);
-    }
+    opacity: 0;
 }

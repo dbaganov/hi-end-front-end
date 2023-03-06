@@ -1,12 +1,11 @@
 import { useTranslation } from 'react-i18next';
-import { Counter } from 'entities/Counter';
+import LoginModal from 'features/AuthByUsername/ui/LoginModal/LoginModal';
 
 function MainPage() {
     const { t } = useTranslation();
     return (
         <div>
             <h1>{t('Main Page')}</h1>
-            <Counter />
         </div>
     );
 }

@@ -1,15 +1,14 @@
+@use "app/styles/mixins.scss" as *;
+
 .aside {
+    @include card;
+
     grid-area: sidebar;
-    background-color: #fff;
-    box-shadow: var(--content-box-shadow);
     display: flex;
     flex-direction: column;
     height: 100%;
     overflow: hidden;
     position: relative;
-    width: 100%;
-    padding: var(--content-padding);
-    border-radius: var(--content-border-radius);
     transition: width 0.3s ease-in-out;
 
     &.collapsed {

@@ -1,7 +1,7 @@
+@use "app/styles/mixins.scss" as *;
+
 .content {
     grid-area: content;
-    padding: var(--content-padding);
-    background-color: #fff;
-    box-shadow: var(--content-box-shadow);
-    border-radius: var(--content-border-radius);
+
+    @include card;
 }

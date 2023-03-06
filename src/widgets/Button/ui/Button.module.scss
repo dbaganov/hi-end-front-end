@@ -1,6 +1,5 @@
 .button {
     cursor: pointer;
-    color: var(--text-color);
     font-size: var(--font-size-m);
     line-height: var(--font-line-height-m);
     padding: calc(var(--content-padding) / 2) var(--content-padding);
@@ -14,7 +13,7 @@
 
 .button:hover {
     background-color: var(--secondary-color);
-    color: var(--text-color);
+    color: var(--primary-color);
 }
 
 .clear {
@@ -27,13 +26,13 @@
 
 .primary {
     background-color: var(--primary-color);
-    color: var(--text-color);
+    color: var(--secondary-color);
 }
 
 .outline {
     background-color: transparent;
     border: 1px solid var(--primary-color);
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .outline:hover {
