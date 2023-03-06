@@ -1,0 +1,7 @@
+@mixin card {
+    width: 100%;
+    padding: var(--content-padding);
+    background-color: var(--background-color-inverted);
+    box-shadow: var(--content-box-shadow);
+    border-radius: var(--content-border-radius);
+}

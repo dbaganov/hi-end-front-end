@@ -1,4 +1,5 @@
 :root {
+    --base-font-size: 16px;
     --font-family-primary: "Consolas", monospace;
     --font-size-l: 1.5rem;
     --font-size-m: 1.2rem;
@@ -21,8 +22,9 @@
         var(--font-size-xs) var(--font-line-height-xs)
         var(--font-family-primary);
     --content-padding: 1rem;
+    --content-margin: 1rem;
     --content-border-radius: 0.25rem;
-    --content-box-shadow: 0 0 0.5rem rgb(0 0 0 / 10%);
+    --content-box-shadow: 0 0 1rem rgb(0 0 0 / 10%);
     --sidebar-width: 20rem;
     --sidebar-width-collapsed: 6.5rem;
 
