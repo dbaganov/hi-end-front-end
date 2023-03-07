@@ -11,9 +11,10 @@ interface LoginModalProps {
 }
 
 const LoginModal = (props: LoginModalProps) => {
-    const { className } = props;
     const dispatch = useDispatch();
     const { isLoginModalOpened } = useSelector(getLoginModal);
+
+    const { className } = props;
     const classes = classNames(styles.LoginModal, {}, [className]);
 
     const handleClose = () => {
@@ -27,7 +28,7 @@ const LoginModal = (props: LoginModalProps) => {
             isOpen={isLoginModalOpened}
             onClose={handleClose}
         >
-            <LoginForm />
+            {isLoginModalOpened && <LoginForm />}
         </Modal>
     );
 };
