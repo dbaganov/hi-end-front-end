@@ -11,3 +11,8 @@
 .LoginForm__button {
     margin-top: 1rem;
 }
+
+.LoginForm__error {
+    margin-top: var(--content-padding);
+    color: var(--error-color);
+}

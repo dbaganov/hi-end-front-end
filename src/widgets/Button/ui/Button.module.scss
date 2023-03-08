@@ -38,3 +38,9 @@
 .outline:hover {
     border-color: var(--secondary-color);
 }
+
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    pointer-events: none;
+}

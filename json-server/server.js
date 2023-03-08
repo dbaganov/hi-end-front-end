@@ -21,9 +21,9 @@ server.use(async (req, res, next) => {
 });
 
 server.post('/auth/login', (req, res) => {
-    const { email, password } = req.body;
+    const { username, password } = req.body;
     const user = users.find(
-        user => user.email === email && user.password === password
+        user => user.username === username && user.password === password
     );
 
     if (!user) {

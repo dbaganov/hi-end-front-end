@@ -12,14 +12,24 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     theme?: ThemeButton;
     className?: string;
     children?: React.ReactNode;
+    disabled?: boolean;
 }
 
 function Button(props: ButtonProps) {
-    const { theme = ThemeButton.PRIMARY, className, children, ...rest } = props;
-    const classes = classNames(styles.button, {}, [className, styles[theme]]);
+    const {
+        theme = ThemeButton.PRIMARY,
+        className,
+        disabled,
+        children,
+        ...rest
+    } = props;
+    const classes = classNames(styles.button, { [styles.disabled]: disabled }, [
+        className,
+        styles[theme]
+    ]);
 
     return (
-        <button type="button" className={classes} {...rest}>
+        <button type="button" className={classes} disabled={disabled} {...rest}>
             {children}
         </button>
     );
