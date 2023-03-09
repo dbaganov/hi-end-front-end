@@ -5,5 +5,12 @@
     "Reload Page": "Reload Page Fi",
     "About Page": "About Page Fi",
     "Sidebar": "Sidebar Fi",
-    "Main Page": "Main Page Fi"
+    "Main Page": "Main Page Fi",
+    "login": {
+        "title": "Login Fi",
+        "error": "Invalid login or password Fi",
+        "username": "Username Fi",
+        "password": "Password Fi",
+        "submit": "Login Fi"
+    }
 }

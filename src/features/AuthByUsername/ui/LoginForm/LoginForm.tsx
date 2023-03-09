@@ -4,6 +4,7 @@ import Input from 'shared/ui/Input/Input';
 import { Button } from 'widgets/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { memo, useCallback, useEffect } from 'react';
+import { TextTheme, Text } from 'shared/ui/Text';
 import loginByUsername from '../../model/services/loginByUsername/loginByUsername';
 import { loginActions } from '../../model/slices/loginSlice/loginSlice';
 import styles from './LoginForm.module.scss';
@@ -58,28 +59,38 @@ const LoginForm = (props: LoginFormProps) => {
 
     return (
         <form className={classes} onSubmit={onSubmit}>
+            <Text
+                className={styles.LoginForm__title}
+                title={t('login.title')}
+            />
             <Input
                 id="username"
-                label={t('Username')}
+                label={t('login.username')}
                 autoFocus
                 value={username}
                 onChange={onChangeUsername}
             />
             <Input
                 id="password"
-                label={t('Password')}
+                label={t('login.password')}
                 value={password}
                 type="password"
                 onChange={onChangePassword}
             />
-            {error && <div className={styles.LoginForm__error}>{error}</div>}
+            {error && (
+                <Text
+                    className={styles.LoginForm__error}
+                    text={error}
+                    theme={TextTheme.Error}
+                />
+            )}
             <div className={styles.LoginForm__formGroup}>
                 <Button
                     className={styles.LoginForm__button}
                     type="submit"
                     disabled={isLoading}
                 >
-                    {t('Login')}
+                    {t('login.submit')}
                 </Button>
             </div>
         </form>

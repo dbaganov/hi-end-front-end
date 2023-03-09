@@ -7,10 +7,6 @@
     @include card;
 }
 
-.Input + .Input {
-    margin-top: var(--content-margin);
-}
-
 .Input__label {
     display: block;
     font-weight: bolder;

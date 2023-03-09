@@ -1,6 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { User } from 'entities/User';
+import { User, userActions } from 'entities/User';
+import i18n from 'shared/config/i18n/i18n';
+import { setLocalStorageItem } from 'shared/lib/localStorage/localStorage';
+import { USER_LOCAL_STORAGE_KEY } from 'shared/const/localStorage';
 
 interface LoginByUsernamePayload {
     username: string;
@@ -13,7 +16,7 @@ const loginByUsername = createAsyncThunk<
     { rejectValue: string }
 >(
     'login/loginByUsername',
-    async ({ username, password }, { rejectWithValue }) => {
+    async ({ username, password }, { dispatch, rejectWithValue }) => {
         try {
             const response = await axios.post(
                 'http://localhost:8000/auth/login',
@@ -22,10 +25,14 @@ const loginByUsername = createAsyncThunk<
                     password
                 }
             );
+            const { data } = response;
 
-            return response.data;
+            setLocalStorageItem(USER_LOCAL_STORAGE_KEY, data);
+            dispatch(userActions.setAuthData(data));
+
+            return data;
         } catch (error) {
-            return rejectWithValue('Invalid username or password');
+            return rejectWithValue(i18n.t('login.error'));
         }
     }
 );

@@ -6,13 +6,5 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-}
-
-.LoginForm__button {
-    margin-top: 1rem;
-}
-
-.LoginForm__error {
-    margin-top: var(--content-padding);
-    color: var(--error-color);
+    gap: var(--content-margin);
 }

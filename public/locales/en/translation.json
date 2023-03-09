@@ -5,5 +5,12 @@
     "Reload Page": "Reload Page",
     "About Page": "About Page",
     "Sidebar": "Sidebar",
-    "Main Page": "Main Page"
+    "Main Page": "Main Page",
+    "login": {
+        "title": "Login",
+        "error": "Invalid login or password",
+        "username": "Username",
+        "password": "Password",
+        "submit": "Login"
+    }
 }

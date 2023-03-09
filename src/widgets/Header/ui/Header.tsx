@@ -2,7 +2,9 @@ import React from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { useTranslation } from 'react-i18next';
-import { LoginButton, loginModalActions } from 'features/AuthByUsername';
+import { LoginButton } from 'features/AuthByUsername';
+import { useSelector } from 'react-redux';
+import { getUserAuthData, Username } from 'entities/User';
 import styles from './Header.module.scss';
 
 interface HeaderProps {
@@ -10,6 +12,7 @@ interface HeaderProps {
 }
 
 function Header(props: HeaderProps) {
+    const authData = useSelector(getUserAuthData);
     const { t } = useTranslation();
     const { className } = props;
     const classes = classNames(styles.header, {}, [className]);
@@ -18,7 +21,7 @@ function Header(props: HeaderProps) {
         <header className={classes}>
             <h1>{t('title')}</h1>
             <div className={styles.controls}>
-                <LoginButton />
+                {authData ? <Username /> : <LoginButton />}
                 <span>|</span>
                 <LangSwitcher />
             </div>

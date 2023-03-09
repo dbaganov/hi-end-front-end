@@ -32,7 +32,10 @@ server.post('/auth/login', (req, res) => {
         });
     }
 
-    return res.status(200).json(user);
+    const userWithoutPassword = { ...user };
+    delete userWithoutPassword.password;
+
+    return res.status(200).json(userWithoutPassword);
 });
 
 server.use((req, res, next) => {
