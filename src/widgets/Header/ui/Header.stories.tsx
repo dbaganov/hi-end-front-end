@@ -16,3 +16,15 @@ const Template: ComponentStory<typeof Header> = args => <Header {...args} />;
 export const Default = Template.bind({});
 Default.args = {};
 Default.decorators = [StoreDecorator({})];
+
+export const LoggedIn = Template.bind({});
+LoggedIn.args = {};
+LoggedIn.decorators = [
+    StoreDecorator({
+        user: {
+            authData: {
+                username: 'test'
+            }
+        }
+    })
+];
