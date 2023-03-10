@@ -11,3 +11,7 @@ export function setLocalStorageItem<T>(key: string, value: T): void {
     if (typeof value === 'object' && Object.keys(value).length === 0) return;
     localStorage.setItem(key, JSON.stringify(value));
 }
+
+export function removeLocalStorageItem(key: string): void {
+    localStorage.removeItem(key);
+}

@@ -4,6 +4,7 @@ import { Header } from 'widgets/Header';
 import { Sidebar } from 'widgets/Sidebar';
 import { Content } from 'widgets/Content';
 import { AppRouter } from 'app/providers/RouteProvider';
+import { StoreDecorator } from 'shared/config/storybook/decorators/StoreDecorator';
 import Layout from './Layout';
 
 export default {
@@ -28,3 +29,4 @@ Default.args = {
         </Layout>
     )
 };
+Default.decorators = [StoreDecorator({})];

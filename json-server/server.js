@@ -38,6 +38,7 @@ server.post('/auth/login', (req, res) => {
     return res.status(200).json(userWithoutPassword);
 });
 
+// eslint-disable-next-line consistent-return
 server.use((req, res, next) => {
     if (!req.headers.authorization) {
         return res.status(401).send({

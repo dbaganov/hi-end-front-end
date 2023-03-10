@@ -7,6 +7,7 @@ export default (env: BuildEnv) => {
     const isDev = mode === 'development';
     const port = env.port || 3000;
 
+    // eslint-disable-next-line no-console
     console.log(`Building in ${mode} mode...`);
 
     return buildWebpackConfig({
