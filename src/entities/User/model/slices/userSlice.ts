@@ -5,7 +5,7 @@ import {
 } from 'shared/lib/localStorage/localStorage';
 import { USER_LOCAL_STORAGE_KEY } from 'shared/const/localStorage';
 import { UserSchema } from '../types/userSchema';
-import { User } from '../types/User';
+import { User } from '../types/user';
 
 const initialState: UserSchema = {};
 
