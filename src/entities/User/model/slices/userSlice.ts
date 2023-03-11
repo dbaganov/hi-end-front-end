@@ -14,6 +14,7 @@ export const userSlice = createSlice({
     initialState,
     reducers: {
         initAuthData: state => {
+            // TODO: move to middleware
             const authData = getLocalStorageItem<User>(USER_LOCAL_STORAGE_KEY);
             if (authData) {
                 state.authData = authData;
@@ -24,6 +25,7 @@ export const userSlice = createSlice({
         },
         logout: state => {
             state.authData = undefined;
+            // TODO: move to middleware
             removeLocalStorageItem(USER_LOCAL_STORAGE_KEY);
         }
     }
