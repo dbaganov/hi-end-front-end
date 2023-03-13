@@ -1,10 +1,14 @@
 import Modal from 'shared/ui/Modal';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginModalActions } from 'features/AuthByUsername';
-import LoginForm from '../LoginForm/LoginForm';
+import { loginModalActions, loginModalReducer } from 'features/AuthByUsername';
+import { Suspense } from 'react';
+import { Loader } from 'shared/ui/Loader';
+import { useInjectReducer } from 'shared/hooks/useInjectReducer';
 import { getLoginModal } from '../../model/selectors/getLoginModalState/getLoginModal';
+import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 
 const LoginModal = () => {
+    // useInjectReducer('loginModal', loginModalReducer);
     const dispatch = useDispatch();
     const { isLoginModalOpened } = useSelector(getLoginModal);
 
@@ -14,7 +18,11 @@ const LoginModal = () => {
 
     return (
         <Modal lazy isOpen={isLoginModalOpened} onClose={handleClose}>
-            {isLoginModalOpened && <LoginForm />}
+            {isLoginModalOpened && (
+                <Suspense fallback={<Loader />}>
+                    <LoginFormAsync />
+                </Suspense>
+            )}
         </Modal>
     );
 };
